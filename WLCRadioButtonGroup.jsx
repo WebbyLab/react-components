@@ -7,7 +7,7 @@ var React = require('react');
 var cx = require('react-classset');
 var Icon = require('./Icon.jsx');
 
-require('./RadioButtonGroup.less');
+require('./WLCRadioButtonGroup.less');
 
 var RadioButtonGroup = React.createClass({
     propTypes: {

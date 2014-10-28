@@ -6,14 +6,13 @@
 var React = require('react');
 var cx = require('react-classset');
 
-require('./Icon.less');
+require('./WLCIcon.less');
 
 var Icon = React.createClass({
     propTypes: {
         onClick: React.PropTypes.func,
         value: React.PropTypes.string,
         type: React.PropTypes.string.isRequired,
-        clickable:   React.PropTypes.bool, // set cursor: pointer
     },
 
     handleClick(e){
@@ -27,14 +26,14 @@ var Icon = React.createClass({
     render() {
         var typeName = this.props.type;
 
-        var IconClass = cx({
+        var iconClass = cx({
             'Icon'          : true,
-            'clickable'     : this.props.clickable === true,
+            'clickable'     : this.props.onClick,
             // 'fa fa-circle-o': typeName == 'radio-button-unchecked' EXAMPLE FOR NEW ICON
         });
 
         return (
-            <i className={ IconClass } onTouchTap={this.handleClick}>
+            <i className={ iconClass } onTouchTap={this.handleClick}>
                 {this.props.value ? this.props.value : ''}
             </i>
         );
