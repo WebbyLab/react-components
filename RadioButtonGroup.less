@@ -1,0 +1,62 @@
+@main-color: #FFFFFF;
+
+.RadioButtonGroup {
+    font-family: 'Ubuntu Light', Helvetica;
+    .active {
+        color: #fff;
+        border: 1px solid @main-color;
+        background-color: @main-color;
+    }
+
+    .RadioBtnWithLabel {
+        display: inline-block;
+
+        margin-right: 15px;
+
+        &:active {
+            .active;
+        }
+
+        &.disabled span,
+        &.disabled .Icon {
+            cursor: default;
+        }
+        span,
+        .Icon {
+            cursor: pointer;
+        }
+
+    }
+
+    &.rectangle .RadioBtnWithLabel {
+        display: inline-block;
+
+        margin-right: -3px;
+        padding: 5px 10px;
+
+        cursor: pointer;
+
+        color: @main-color;
+        border: 1px solid @main-color;
+        border-radius: 1px;
+        background-color: #fff;
+
+        &:active {
+            .active;
+        }
+    }
+
+    &.rectangle.disabled {
+        opacity: .5;
+    }
+
+    &.rectangle .RadioBtnWithLabel.active {
+        -webkit-animation-duration: .2s;
+           -moz-animation-duration: .2s;
+            -ms-animation-duration: .2s;
+             -o-animation-duration: .2s;
+                animation-duration: .2s;
+
+        .active;
+    }
+}
