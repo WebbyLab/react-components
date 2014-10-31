@@ -45,7 +45,7 @@ var Menu = React.createClass({
                                  className={optClass}
                                  onTouchTap={this.handleChange.bind(this, item.id)}
                                  onClick={this.handleChange.bind(this, item.id)}>
-                                {item.label}
+                                <span>{item.label}</span>
                             </div>
                         );
                     }) }
