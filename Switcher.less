@@ -1,0 +1,49 @@
+@import '../ColorScheme.less';
+
+.WLC-Switcher {
+    font-size: 8px;
+
+    position: relative;
+
+    width: 46px;
+    height: 22px;
+
+    border-radius: 1px;
+    background-color: @main-color;
+    cursor: pointer;
+
+    .WLC-on,
+    .WLC-off {
+        line-height: 25px;
+
+        display: inline-block;
+
+        width: 50%;
+        height: 100%;
+
+        text-align: center;
+    }
+    .WLC-on {
+        color: #fff;
+    }
+    .WLC-off {
+        color: #9e858d;
+    }
+    .WLC-curtain {
+        position: absolute;
+
+        width: 21px;
+        height: 20px;
+        margin: 1px 1px 0px 1px;
+
+        -webkit-transition: left .2s;
+           -moz-transition: left .2s;
+                transition: left .2s;
+
+        background-color: #fff;
+    }
+
+    &.WLC-disabled {
+        background-color: @disabled-color;
+    }
+}
