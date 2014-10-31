@@ -124,15 +124,15 @@ var NumericInput = React.createClass({
     render() {
         var errorNode = this.state.error
             ? (<div className="animated fadeInUp">
-                   <label className="warning-text error">{this.state.error}</label>
-                   <div className="appendix error"></div>
+                   <label className="WLC-warning-text WLC-error">{this.state.error}</label>
+                   <div className="WLC-appendix WLC-error"></div>
                </div>)
             : '';
 
         var warningNode = this.state.warning
             ? (<div className="animated fadeInUp">
-                  <label className="warning-text warning">{this.state.warning}</label>
-                  <div className="appendix warning"></div>
+                  <label className="WLC-warning-text WLC-warning">{this.state.warning}</label>
+                  <div className="WLC-appendix WLC-warning"></div>
                </div>)
             : '';
 
@@ -144,15 +144,9 @@ var NumericInput = React.createClass({
         var symbolNode = <span className="symbol">{typeSign}</span>;
 
         var inputClasses = cx({
-            'focused': this.state.focused,
-            'warning': this.state.warning,
-            'error':   this.state.error,
-            'heatMap' : this.props.heatMap,
-            'heat-lowest' : this.props.heatMap == 'LOWEST',
-            'heat-low' : this.props.heatMap == 'LOW',
-            'heat-middle' : this.props.heatMap == 'MIDDLE',
-            'heat-high' : this.props.heatMap == 'HIGH',
-            'heat-highest' : this.props.heatMap == 'HIGHEST',
+            'WLC-focused': this.state.focused,
+            'WLC-warning': this.state.warning,
+            'WLC-error':   this.state.error,
         });
 
         var inputNode = <input ref       = "input"
@@ -171,7 +165,7 @@ var NumericInput = React.createClass({
                                             : this.state.formattedValue.toString()} />;
 
         return (
-            <div className="NumericInput">
+            <div className="WLC-NumericInput">
                 {inputNode}
                 {warningNode}
                 {errorNode}

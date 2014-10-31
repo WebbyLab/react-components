@@ -1,6 +1,6 @@
 @text-color: #707171;
 
-.Input {
+.WLC-Input {
     font-family: 'Ubuntu Light', Helvetica;
     font-size: 10pt;
 
@@ -25,13 +25,13 @@
         background-color: #fff;
 
         -webkit-appearance: none;
-        &.error {
+        &.WLC-error {
             border: 2px solid #ed1d39;
             &:focus {
                 border: 2px solid #ed1d39;
             }
         }
-        &.warning {
+        &.WLC-warning {
             border: 2px solid #fec114;
             &:focus {
                 border: 2px solid #fec114;
@@ -40,7 +40,7 @@
         &:focus {
             outline: 0;
         }
-        &.focused {
+        &.WLC-focused {
             z-index: 20;
             right: 5px;
 
@@ -54,7 +54,7 @@
         }
     }
 
-    .warning-text {
+    .WLC-warning-text {
         font-family: 'Ubuntu Light',Helvetica;
         font-size: 7pt;
 
@@ -70,24 +70,24 @@
 
         color: #fff;
         border-radius: 1px;
-        &.warning {
+        &.WLC-warning {
             background-color: #fec114;
         }
-        &.error {
+        &.WLC-error {
             background-color: #ed1d39;
         }
     }
-    .appendix {
+    .WLC-appendix {
         position: absolute;
         bottom: 4px;
         left: 29px;
 
         width: 5px;
         height: 3px;
-        &.error {
+        &.WLC-error {
             background: url('Input/appendix-error.svg');
         }
-        &.warning {
+        &.WLC-warning {
             background: url('Input/appendix-warning.svg');
         }
     }
