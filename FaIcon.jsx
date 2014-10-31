@@ -18,9 +18,9 @@ var FaIcon = React.createClass({
 
     render() {
         var iconClass = cx({
-            'WLCFaIcon': true,
+            'WLC-FaIcon': true,
             'fa': true,
-            'clickable': this.props.onClick || this.props.onTouchTap
+            'WLC-clickable': this.props.onClick || this.props.onTouchTap
         });
 
         return (
