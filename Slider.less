@@ -1,0 +1,121 @@
+@import './SliderMixin.less';
+
+@text-color: #707171;
+
+.WLC-range-base {
+    width: 100%;
+    height: 22px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    background: transparent;
+
+    outline: none; /* no focus outline */
+
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+.WLC-range-fill {
+    position: relative;
+    top: 9px;
+
+    width: 10px;
+    height: 3px;
+
+    border-radius: 12px;
+    background-color: @main-color;
+
+    &.disabled {
+        background: rgba(236,236,236,0.5);
+    }
+}
+
+.WLC-range-thumb {
+    width: 22px;
+    height: 22px;
+
+    border-radius: 12px;
+    border: 0px;
+    background: @main-color;
+
+    -webkit-appearance: none;
+}
+
+.WLC-range-track {
+    height: 1px;
+    background-color: @text-color;
+    width: 100%;
+    position: relative;
+    top: 11px;
+    z-index: 0;
+}
+
+.WLC-Slider {
+    position: relative;
+
+    display: inline-block;
+
+    width: 100px;
+    height: 30px;
+    input[type='range'] {
+        .WLC-range-base;
+    }
+    input[type='range']::-moz-range-track {
+        border: none;
+        background: transparent;
+    }
+    input[type='range']::-ms-track {
+        color: transparent; /* don't drawn vertical reference line */
+        border: inherit;
+        background: transparent;
+    }
+    input[type='range']::-ms-fill-lower,
+    input[type='range']::-ms-fill-upper {
+        background: transparent;
+    }
+    input[type='range']::-ms-tooltip {
+        display: none;
+    }
+    input[type='range']::-webkit-slider-thumb {
+        .WLC-range-thumb;
+    }
+
+    input[type="range"]:disabled::-webkit-slider-thumb {
+        background: rgba(236,236,236,1);
+        border: none;
+    }
+
+    input[type="range"]:disabled::-moz-range-thumb {
+        background: rgba(236,236,236,1);
+        border: none;
+    }
+
+    input[type="range"]:disabled::-ms-thumb  {
+        background: rgba(236,236,236,1);
+        border: none;
+    }
+
+    input[type='range']::-moz-range-thumb {
+        .WLC-range-thumb;
+    }
+    input[type='range']::-ms-thumb {
+        .WLC-range-thumb;
+    }
+
+    .WLC-slider-fill {
+        .WLC-range-fill;
+    }
+
+    .WLC-track {
+        .WLC-range-track;
+    }
+    .WLC-sub-label {
+        font-size: 11px;
+
+        position: relative;
+        top: 12px;
+
+        color: @text-color;
+    }
+}
