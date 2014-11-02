@@ -1,0 +1,94 @@
+@text-color: #707171;
+
+.WLC-Input {
+    font-family: 'Ubuntu Light', Helvetica;
+    font-size: 10pt;
+
+    position: relative;
+
+    width: 70px;
+    height: 20px;
+    input {
+        font-family: 'Ubuntu Light', Helvetica;
+        font-size: 10pt;
+
+        position: absolute;
+        z-index: 10;
+        right: 14px;
+
+        width: 40px;
+        padding: 4px 12px 3px 6px;
+
+        text-align: center;
+
+        border: 2px solid #fff;
+        background-color: #fff;
+
+        -webkit-appearance: none;
+        &.WLC-error {
+            border: 2px solid #ed1d39;
+            &:focus {
+                border: 2px solid #ed1d39;
+            }
+        }
+        &.WLC-warning {
+            border: 2px solid #fec114;
+            &:focus {
+                border: 2px solid #fec114;
+            }
+        }
+        &:focus {
+            outline: 0;
+        }
+        &.WLC-focused {
+            z-index: 20;
+            right: 5px;
+
+            width: 60px;
+
+            box-shadow: 0 3px 6px rgba(0, 0, 0, .2);
+        }
+
+        &[disabled] {
+            background-color: #ececec;
+        }
+    }
+
+    .WLC-warning-text {
+        font-family: 'Ubuntu Light',Helvetica;
+        font-size: 7pt;
+
+        position: absolute;
+        bottom: 7px;
+        left: -8px;
+
+        width: 80px;
+        height: 10px;
+        padding: 2px 0;
+
+        text-align: center;
+
+        color: #fff;
+        border-radius: 1px;
+        &.WLC-warning {
+            background-color: #fec114;
+        }
+        &.WLC-error {
+            background-color: #ed1d39;
+        }
+    }
+    .WLC-appendix {
+        position: absolute;
+        bottom: 4px;
+        left: 29px;
+
+        width: 5px;
+        height: 3px;
+        &.WLC-error {
+            background: url('Input/appendix-error.svg');
+        }
+        &.WLC-warning {
+            background: url('Input/appendix-warning.svg');
+        }
+    }
+}
