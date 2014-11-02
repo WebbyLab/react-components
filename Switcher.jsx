@@ -5,8 +5,8 @@
 'use strict';
 
 var React = require('react');
-var cx    = require('react-classset');
-var _     = require('lodash');
+var cx = React.addons.classSet;
+var _ = require('lodash');
 
 require('./Switcher.less');
 
