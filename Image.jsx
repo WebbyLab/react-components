@@ -31,7 +31,7 @@ var Image = React.createClass({
 
     render() {
         return this.state.src
-            ? <img className='Image'
+            ? <img className='WLC-Image'
                    src={this.state.src}
                    onError={this.handleImageLoadError} />
             : this.props.placeholder;
