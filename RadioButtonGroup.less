@@ -1,7 +1,6 @@
 @main-color: #FFFFFF;
 
-.RadioButtonGroup {
-    font-family: 'Ubuntu Light', Helvetica;
+.WLC-RadioButtonGroup {
     .active {
         color: #fff;
         border: 1px solid @main-color;
@@ -17,8 +16,8 @@
             .active;
         }
 
-        &.disabled span,
-        &.disabled .Icon {
+        &.WLC-disabled span,
+        &.WLC-disabled .Icon {
             cursor: default;
         }
         span,
@@ -28,7 +27,7 @@
 
     }
 
-    &.rectangle .RadioBtnWithLabel {
+    &.WLC-rectangle .WLC-RadioBtnWithLabel {
         display: inline-block;
 
         margin-right: -3px;
@@ -46,11 +45,11 @@
         }
     }
 
-    &.rectangle.disabled {
+    &.WLC-rectangle.WLC-disabled {
         opacity: .5;
     }
 
-    &.rectangle .RadioBtnWithLabel.active {
+    &.WLC-rectangle .WLC-RadioBtnWithLabel.active {
         -webkit-animation-duration: .2s;
            -moz-animation-duration: .2s;
             -ms-animation-duration: .2s;

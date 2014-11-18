@@ -5,9 +5,9 @@
 
 var React = require('react');
 var cx = require('react-classset');
-var Icon = require('./WLCIcon.jsx');
+var FaIcon = require('./FaIcon.jsx');
 
-require('./WLCRadioButtonGroup.less');
+require('./RadioButtonGroup.less');
 
 var RadioButtonGroup = React.createClass({
     propTypes: {
@@ -44,8 +44,8 @@ var RadioButtonGroup = React.createClass({
         var isActive = this.state.activeId === btn.id;
 
         var rectangleClass = cx({
-            'active': isActive,
-            'RadioBtnWithLabel': true,
+            'WLC-active': isActive,
+            'WLC-RadioBtnWithLabel': true,
         });
 
         var labelNode = btn.label
@@ -58,8 +58,8 @@ var RadioButtonGroup = React.createClass({
             </div>
         );
         return (
-            <div className='RadioBtnWithLabel' key={btn.id}>
-                <Icon type={(btn.icon).toLowerCase()}
+            <div className='WLC-RadioBtnWithLabel' key={btn.id}>
+                <FaIcon type={(btn.icon).toLowerCase()}
                       value={btn.iconText}
                       onClick={this.handleClick.bind(this, btn.id)} />
                 {labelNode}
@@ -73,9 +73,9 @@ var RadioButtonGroup = React.createClass({
         });
 
         var rootClass = cx({
-            'RadioButtonGroup': true,
-            'disabled': this.props.disabled,
-            'rectangle': this.props.display === 'rectangle',
+            'WLC-RadioButtonGroup': true,
+            'WLC-disabled': this.props.disabled,
+            'WLC-rectangle': this.props.display === 'rectangle',
         });
 
         return (
