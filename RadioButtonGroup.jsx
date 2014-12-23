@@ -4,7 +4,7 @@
 'use strict';
 
 var React = require('react');
-var cx = require('react-classset');
+var cx = React.addons.classSet;
 var FaIcon = require('./FaIcon.jsx');
 
 require('./RadioButtonGroup.less');
@@ -37,10 +37,10 @@ var RadioButtonGroup = React.createClass({
             activeId: id
         });
 
-        this.props.onChange(data);
+        this.props.onChange(id);
     },
 
-    renderSingleBtn(btn,i) {
+    renderSingleBtn(btn) {
         var isActive = this.state.activeId === btn.id;
 
         var rectangleClass = cx({
