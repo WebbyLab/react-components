@@ -20,6 +20,8 @@
         "react": ">=0.11.0"
     },
     "dependencies": {
-        "font-awesome": "*"
+        "font-awesome": "*",
+        "lodash": "*",
+        "numeral": "*"
     }
 }

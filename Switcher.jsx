@@ -14,14 +14,19 @@ var Switcher = React.createClass({
     propTypes: {
         disabled:    React.PropTypes.bool,
         isEnabled:   React.PropTypes.bool,
-        onClick:     React.PropTypes.func,
-        style:       React.PropTypes.string,
+        onClick:     React.PropTypes.func
     },
 
     getInitialState() {
         return {
-            isEnabled: this.props.isEnabled,
+            isEnabled: this.props.isEnabled
         };
+    },
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            isEnabled: nextProps.isEnabled
+        });
     },
 
     _handleClick() {
@@ -38,27 +43,21 @@ var Switcher = React.createClass({
         }
     },
 
-    delayedHandleClick: _.debounce(function (data) { this.props.onClick(data); }, 200),
-
-    componentWillReceiveProps(nextProps) {
-        this.setState({
-            isEnabled: nextProps.isEnabled
-        });
-    },
+    delayedHandleClick: _.debounce(function (isEnabled) { this.props.onClick(isEnabled); }, 200),
 
     render() {
         var curtainPosition = this.state.isEnabled ? '50%' : '0';
         var curtainStyle    = {left: curtainPosition};
         var switcherClass   = cx({
-            'WLC-Switcher': true,
-            'WLC-disabled': this.props.disabled
+            "WLC-Switcher": true,
+            "WLC-disabled": this.props.disabled
         });
 
         return (
-            <div className={switcherClass} onTouchTap={this._handleClick}>
-                <div className='WLC-curtain' style={curtainStyle}/>
-                <div className='WLC-on'>YES</div>
-                <div className='WLC-off'>NO</div>
+            <div className={switcherClass} onTouchStart={this._handleClick}>
+                <div className="WLC-curtain" style={curtainStyle}/>
+                <div className="WLC-on">YES</div>
+                <div className="WLC-off">NO</div>
             </div>
         );
     }

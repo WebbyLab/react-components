@@ -3,8 +3,8 @@
  */
 'use strict';
 
-var React   = require('react');
-var cx      = require('react-classset');
+var React = require('react');
+var cx = React.addons.classSet;
 var numeral = require('numeral');
 
 require('./NumericInput.less');
