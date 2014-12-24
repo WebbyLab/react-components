@@ -3,7 +3,7 @@
  */
 'use strict';
 
-var React = require('react');
+var React = require('react/addons');
 var cx = React.addons.classSet;
 var FaIcon = require('./FaIcon.jsx');
 
@@ -49,11 +49,11 @@ var RadioButtonGroup = React.createClass({
         });
 
         var labelNode = btn.label
-            ? <span onTouchStart={this.handleClick.bind(this, btn.id)}>{btn.label}</span>
+            ? <span onTouchTap={this.handleClick.bind(this, btn.id)}>{btn.label}</span>
             : '';
 
         if (this.props.display === 'rectangle') return (
-            <div className={rectangleClass} key={btn.id} onTouchStart={this.handleClick.bind(this, btn.id)}>
+            <div className={rectangleClass} key={btn.id} onTouchTap={this.handleClick.bind(this, btn.id)}>
                 {labelNode}
             </div>
         );
