@@ -54,7 +54,7 @@ var Switcher = React.createClass({
         });
 
         return (
-            <div className={switcherClass} onTouchStart={this._handleClick}>
+            <div className={switcherClass} onTouchTap={this._handleClick}>
                 <div className="WLC-curtain" style={curtainStyle}/>
                 <div className="WLC-on">YES</div>
                 <div className="WLC-off">NO</div>

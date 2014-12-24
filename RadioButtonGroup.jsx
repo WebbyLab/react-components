@@ -3,8 +3,8 @@
  */
 'use strict';
 
-var React = require('react');
-var cx = require('react-classset');
+var React = require('react/addons');
+var cx = React.addons.classSet;
 var FaIcon = require('./FaIcon.jsx');
 
 require('./RadioButtonGroup.less');
@@ -37,10 +37,10 @@ var RadioButtonGroup = React.createClass({
             activeId: id
         });
 
-        this.props.onChange(data);
+        this.props.onChange(id);
     },
 
-    renderSingleBtn(btn,i) {
+    renderSingleBtn(btn) {
         var isActive = this.state.activeId === btn.id;
 
         var rectangleClass = cx({
@@ -49,11 +49,11 @@ var RadioButtonGroup = React.createClass({
         });
 
         var labelNode = btn.label
-            ? <span onTouchStart={this.handleClick.bind(this, btn.id)}>{btn.label}</span>
+            ? <span onTouchTap={this.handleClick.bind(this, btn.id)}>{btn.label}</span>
             : '';
 
         if (this.props.display === 'rectangle') return (
-            <div className={rectangleClass} key={btn.id} onTouchStart={this.handleClick.bind(this, btn.id)}>
+            <div className={rectangleClass} key={btn.id} onTouchTap={this.handleClick.bind(this, btn.id)}>
                 {labelNode}
             </div>
         );
