@@ -53,11 +53,14 @@ var Switcher = React.createClass({
             "WLC-disabled": this.props.disabled
         });
 
+        var onText = this.props.onText || 'ON';
+        var offText = this.props.offText || 'OFF';
+
         return (
             <div className={switcherClass} onTouchTap={this._handleClick}>
                 <div className="WLC-curtain" style={curtainStyle}/>
-                <div className="WLC-on">YES</div>
-                <div className="WLC-off">NO</div>
+                <div className="WLC-on">{onText}</div>
+                <div className="WLC-off">{offText}</div>
             </div>
         );
     }
