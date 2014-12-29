@@ -50,6 +50,7 @@ var Switcher = React.createClass({
         var curtainStyle    = {left: curtainPosition};
         var switcherClass   = cx({
             "WLC-Switcher": true,
+            "WLC-off": !this.state.isEnabled,
             "WLC-disabled": this.props.disabled
         });
 
