@@ -64,8 +64,8 @@ var MultiSwitcher = React.createClass({
         var isActive = this.state.activeId === btn.id;
 
         var rectangleClass = cx({
-            'active': isActive,
-            'RadioBtnWithLabel': true,
+            'WLC-active': isActive,
+            'WLC-RadioBtnWithLabel': true,
         });
 
         var labelNode = btn.label
@@ -112,7 +112,7 @@ var MultiSwitcher = React.createClass({
         };
 
         var curtainNode = (
-            <div className='curtain' style={curtainStyle}>
+            <div className='WLC-curtain' style={curtainStyle}>
                 {this.state.activeLabel}
             </div>
         );
@@ -122,8 +122,8 @@ var MultiSwitcher = React.createClass({
         });
 
         var rootClass = cx({
-            'MultiSwitcher': true,
-            'disabled': this.props.disabled,
+            'WLC-MultiSwitcher': true,
+            'WLC-disabled': this.props.disabled,
         });
 
         return (
