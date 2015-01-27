@@ -32,7 +32,12 @@ var MultiSwitcher = React.createClass({
     },
 
     componentWillReceiveProps(nextProps) {
-        this.setState( {activeId: nextProps.activeId} );
+        var activeButton = _.find(this.props.buttons, (btn) => { return btn.id == nextProps.activeId; });
+
+        this.setState({
+            activeId: nextProps.activeId,
+            activeLabel: activeButton.label
+        });
     },
 
     getSelectedValue() {
@@ -60,7 +65,7 @@ var MultiSwitcher = React.createClass({
 
     delayedHandleChange: _.debounce(function (data) { this.props.onChange(data); }, 200),
 
-    renderSingleBtn(btn,i) {
+    renderSingleBtn(btn) {
         var isActive = this.state.activeId === btn.id;
 
         var rectangleClass = cx({
@@ -102,6 +107,8 @@ var MultiSwitcher = React.createClass({
 
     shouldComponentUpdate(nextProps, nextState) {
         return nextState.activeId != this.state.activeId ||
+               nextProps.activeId != this.props.activeId ||
+               nextProps.disabled != this.props.disabled ||
                nextState.left != this.state.left;
     },
 
