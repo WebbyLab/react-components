@@ -114,7 +114,9 @@ var MultiSwitcher = React.createClass({
 
     render() {
         var curtainStyle = {
-            left: this.state.left + BORDER_SIZE,
+            '-webkit-transform': translateX(this.state.left + BORDER_SIZE),
+            '-ms-transform': translateX(this.state.left + BORDER_SIZE),
+            transform: translateX(this.state.left + BORDER_SIZE),
             width: this.state.width
         };
 
