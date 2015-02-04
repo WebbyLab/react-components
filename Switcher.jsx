@@ -29,6 +29,10 @@ var Switcher = React.createClass({
         });
     },
 
+    shouldComponentUpdate(nextProps, nextState) {
+        return !_.isEqual(nextProps, this.props) || (!_.isEqual(nextState, this.state));
+    },
+
     _handleClick() {
         if (this.props.disabled) return;
 
@@ -43,7 +47,7 @@ var Switcher = React.createClass({
         }
     },
 
-    delayedHandleClick: _.debounce(function (isEnabled) { this.props.onClick(isEnabled); }, 200),
+    delayedHandleClick: _.debounce(function (isEnabled) { this.props.onClick(isEnabled); }, 20),
 
     render() {
         var curtainPosition = this.state.isEnabled ? '50%' : '0';
