@@ -45,7 +45,8 @@ var Flag = React.createClass({
             "KR": country === "KR",
             "TH": country === "TH",
             "AU": country === "AU",
-            "NZ": country === "NZ"
+            "NZ": country === "NZ",
+            "DE": country === "DE"
         });
         return (
             <i className={countryClass}></i>
