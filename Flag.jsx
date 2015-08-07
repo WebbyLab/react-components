@@ -19,6 +19,7 @@ var Flag = React.createClass({
 
         var countryClass = cx({
             'Flag': true,
+            GLOBAL: country === 'G',
             "US": country === "US",
             "CA": country === "CA",
             "MX": country === "MX",
