@@ -1,9 +1,3 @@
-/**
- * @jsx React.DOM
- */
-
-'use strict';
-
 var React = require('react');
 var cx    = require('react-classset');
 var _     = require('lodash');

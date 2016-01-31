@@ -1,8 +1,3 @@
-/**
- * @jsx React.DOM
- */
-'use strict';
-
 var React = require('react');
 var cx = React.addons.classSet;
 var numeral = require('numeral');
@@ -11,14 +6,14 @@ require('./NumericInput.less');
 
 var NumericInput = React.createClass({
     propTypes: {
-         placeholder:     React.PropTypes.string,
-         type:            React.PropTypes.string,
-         label:           React.PropTypes.string,
-         error:           React.PropTypes.string,
-         warning:         React.PropTypes.string,
-         disabled:        React.PropTypes.bool,
-         isNotExpandable: React.PropTypes.bool,
-         onChange:        React.PropTypes.func
+        placeholder:     React.PropTypes.string,
+        type:            React.PropTypes.string,
+        label:           React.PropTypes.string,
+        error:           React.PropTypes.string,
+        warning:         React.PropTypes.string,
+        disabled:        React.PropTypes.bool,
+        isNotExpandable: React.PropTypes.bool,
+        onChange:        React.PropTypes.func
     },
 
     getInitialState() {
