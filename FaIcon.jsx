@@ -1,5 +1,10 @@
+/**
+ * @jsx React.DOM
+ */
+'use strict';
+
 var React = require('react');
-var classNames = require('classnames');
+var cx = React.addons.classSet;
 
 require('font-awesome/css/font-awesome.min.css');
 require('./FaIcon.less');
@@ -12,7 +17,7 @@ var FaIcon = React.createClass({
     },
 
     render() {
-        var iconClass = classNames({
+        var iconClass = cx({
             'WLC-FaIcon': true,
             'fa': true,
             'WLC-clickable': this.props.onClick || this.props.onTouchTap

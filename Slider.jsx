@@ -1,3 +1,8 @@
+/**
+ * @jsx React.DOM
+ */
+'use strict';
+
 var React = require('react/addons');
 var cx = React.addons.classSet;
 
@@ -27,8 +32,8 @@ var Slider = React.createClass({
     },
 
     setSliderFill(value) {
-        var fillPercent = (value - this.state.min) / (this.state.max - this.state.min);
-        var fillFixPercent  = fillPercent / 11; // Fix fill that overlaps slider thumb
+        var fillPercent = (value - this.state.min)/(this.state.max - this.state.min);
+        var fillFixPercent  = fillPercent/11; // Fix fill that overlaps slider thumb
         var sliderWidth = getComputedStyle(this.getDOMNode()).width;
 
         return (fillPercent-fillFixPercent)*parseInt(sliderWidth);
@@ -62,7 +67,7 @@ var Slider = React.createClass({
 
     formatBeforeSend(val) {
         if (this.props.type === 'percent') {
-            return parseFloat(val / 100);
+            return parseFloat(val/100);
         }
 
         return parseFloat(val);

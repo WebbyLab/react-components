@@ -1,3 +1,8 @@
+/**
+ * @jsx React.DOM
+ */
+'use strict';
+
 var React = require('react');
 
 var Image = React.createClass({

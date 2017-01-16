@@ -22,7 +22,6 @@
     "dependencies": {
         "font-awesome": "*",
         "lodash": "*",
-        "numeral": "*",
-        "classnames": "*"
+        "numeral": "*"
     }
 }
