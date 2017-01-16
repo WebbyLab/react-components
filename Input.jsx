@@ -1,9 +1,7 @@
-/**
- * @jsx React.DOM
- */
+
 'use strict';
 
-var React = require('react');
+var React = require('react/addons');
 var cx = React.addons.classSet;
 
 require('./Input.less');
@@ -71,6 +69,11 @@ var Input = React.createClass({
         }
     },
 
+    handleTouchStart(event) {
+        if (this.props.onTouchStart) {
+            this.props.onTouchStart(event);
+        }
+    },
 
     render() {
         var warningNode = this.state.warning
@@ -103,6 +106,7 @@ var Input = React.createClass({
                                onKeyDown      = {this.onKeyDown}
                                autoCapitalize = "off"
                                autoCorrect    = "off"
+                               onTouchStart   = {this.handleTouchStart}
                                onBlur         = {this.handleBlur}
                                onChange       = {this.handleChange}
                                data-map       = {this.props.dataMap}

@@ -1,0 +1,60 @@
+.WLC-Menu {
+    .WLC-menu-wrapper {
+        font-family: 'Ubuntu Light';
+        position: absolute;
+        width: 1024px;
+        height: 768px;
+        z-index: 100;
+        top: 0px;
+        background: rgba(0,0,0,0);
+
+        .WLC-menu-content {
+            cursor: pointer;
+            position:absolute;
+            top: 49px;
+            right:0px;
+            font-size: 14px;
+            width: 220px;
+            border: 1px solid  #77004b;
+
+            animation-duration: .4s;
+
+            ul {
+                padding: 0;
+                margin: 0;
+                list-style: none inside none;
+                li {
+
+                    padding: 8px 20px;
+                    background: #f2f1f1;
+                    color: #707171;
+
+                    &:active,
+                    &:focus {
+                        background-color: #e6d9e2 !important;
+                        color:  #77004b;
+                    }
+
+                    .Icon {
+                        display: inline-block;
+                        padding-right: 20px;
+                    }
+
+                    &.divider-wrap {
+                        padding: 0px 20px;
+
+                        .divider {
+                            background-color:  #77004b;
+                            height: 1px;
+                        }
+                    }
+
+                    span {
+                        position: relative;
+                        bottom: 6px;
+                    }
+                }
+            }
+        }
+    }
+}
